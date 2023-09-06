@@ -5,6 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     [SerializeField] float mainThrust = 1000f;
+    [SerializeField] float rotateValue = 100f;
     Rigidbody rb;
     // Start is called before the first frame update
     void Start()
@@ -33,10 +34,18 @@ public class Movement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.A))
         {
-            Debug.Log("PRESSED Left");
-        }else if (Input.GetKey(KeyCode.D))
-        {
-            Debug.Log("PRESSED Rigth");
+            RotateMethod(rotateValue);
         }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            RotateMethod(-rotateValue);
+        }
+    }
+
+    private void RotateMethod(float rotationThisFrame)
+    {
+        rb.freezeRotation = true; //Freeze rotation when player is controllig to avoid bugs
+        transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime); //Actually rotating the rocket
+        rb.freezeRotation = false; //Back to unfreeze rotation
     }
 }

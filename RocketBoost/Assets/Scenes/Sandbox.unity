@@ -309,6 +309,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 10.502, y: 0, z: 0}
+--- !u!1 &1882722435 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6820878603586367134, guid: 97d832c03bda3104595d3e584f109455, type: 3}
+  m_PrefabInstance: {fileID: 1421378997493743753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1882722443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882722435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0df4f524986ab0443a4c159fbcd99f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &434999153791227153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -320,6 +337,10 @@ PrefabInstance:
     - target: {fileID: 1981002060758598921, guid: be50436d9c68a1f4d887dc31ae204ec6, type: 3}
       propertyPath: m_Name
       value: LandingPad
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981002060758598921, guid: be50436d9c68a1f4d887dc31ae204ec6, type: 3}
+      propertyPath: m_TagString
+      value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 3457135255732159489, guid: be50436d9c68a1f4d887dc31ae204ec6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -374,13 +395,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3043897062731895554, guid: 97d832c03bda3104595d3e584f109455, type: 3}
-      propertyPath: m_Drag
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 3043897062731895554, guid: 97d832c03bda3104595d3e584f109455, type: 3}
-      propertyPath: m_Constraints
-      value: 56
+    - target: {fileID: 3077767180989416398, guid: 97d832c03bda3104595d3e584f109455, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5995086594413729049, guid: 97d832c03bda3104595d3e584f109455, type: 3}
       propertyPath: m_LocalPosition.x
@@ -429,7 +446,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6820878603586367134, guid: 97d832c03bda3104595d3e584f109455, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1882722443}
   m_SourcePrefab: {fileID: 100100000, guid: 97d832c03bda3104595d3e584f109455, type: 3}
 --- !u!1001 &1926520222395860977
 PrefabInstance:
@@ -442,6 +462,22 @@ PrefabInstance:
     - target: {fileID: 3037952907218998834, guid: 5138b52efe9edb74caa9b1f8d30bd2b0, type: 3}
       propertyPath: m_Name
       value: LaunchPad
+      objectReference: {fileID: 0}
+    - target: {fileID: 3037952907218998834, guid: 5138b52efe9edb74caa9b1f8d30bd2b0, type: 3}
+      propertyPath: m_TagString
+      value: FirstPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547556035360722563, guid: 5138b52efe9edb74caa9b1f8d30bd2b0, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547556035360722563, guid: 5138b52efe9edb74caa9b1f8d30bd2b0, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547556035360722563, guid: 5138b52efe9edb74caa9b1f8d30bd2b0, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4547556035360722563, guid: 5138b52efe9edb74caa9b1f8d30bd2b0, type: 3}
       propertyPath: m_LocalPosition.x

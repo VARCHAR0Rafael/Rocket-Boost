@@ -6,6 +6,8 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] float mainThrust = 1000f;
     [SerializeField] float rotateValue = 100f;
+    [SerializeField] AudioClip audioClip;
+
     Rigidbody rb;
     AudioSource audioSource;
     // Start is called before the first frame update
@@ -34,7 +36,7 @@ public class Movement : MonoBehaviour
             if (!audioSource.isPlaying) //we use an if state to prevend double audio bugs
             {
                 //play rocket boost audio
-                audioSource.Play();
+                audioSource.PlayOneShot(audioClip);
             }
         }
         else

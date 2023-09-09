@@ -12,6 +12,7 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip SuccessAudioClip;
 
     AudioSource audioSource;
+    bool isTransitioning = false;
 
 
     void Start()
@@ -21,6 +22,11 @@ public class CollisionHandler : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if (isTransitioning)
+        {
+            return;
+        }
+
         switch (collision.gameObject.tag)
         {
             case "FirstPoint":
@@ -37,6 +43,8 @@ public class CollisionHandler : MonoBehaviour
 
     void StartCrash()
     {
+        isTransitioning = true;
+        audioSource.Stop();
         //This is to enable player controls when it crash
         GetComponent<Movement>().enabled = false;
         audioSource.PlayOneShot(crashAudioClip);
@@ -51,6 +59,8 @@ public class CollisionHandler : MonoBehaviour
     }
     void LoadLevelDelay()
     {
+        isTransitioning = true;
+        audioSource.Stop();
         //This is to enable player controls when reach the end of the level
         GetComponent<Movement>().enabled = false;
         audioSource.PlayOneShot(SuccessAudioClip);
@@ -67,5 +77,10 @@ public class CollisionHandler : MonoBehaviour
             nextSceneLevel = 0;
         }
         SceneManager.LoadScene(nextSceneLevel);
+    }
+
+    void UnableAudio()
+    {
+
     }
 }

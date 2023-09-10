@@ -11,8 +11,13 @@ public class CollisionHandler : MonoBehaviour
     [SerializeField] AudioClip crashAudioClip;
     [SerializeField] AudioClip SuccessAudioClip;
 
+    [SerializeField] ParticleSystem crashParcticles;
+    [SerializeField] ParticleSystem SuccessParcticles;
+
     AudioSource audioSource;
+
     bool isTransitioning = false;
+    bool isCollosionOff = false;
 
 
     void Start()
@@ -20,9 +25,15 @@ public class CollisionHandler : MonoBehaviour
         audioSource = GetComponent<AudioSource>();  //variable to cath the audiosoruce
     }
 
+    void Update()
+    {
+        CheatCode();
+    }
+
     void OnCollisionEnter(Collision collision)
     {
-        if (isTransitioning)
+        //if statement to avoid double audios
+        if (isTransitioning || isCollosionOff)
         {
             return;
         }
@@ -48,6 +59,7 @@ public class CollisionHandler : MonoBehaviour
         //This is to enable player controls when it crash
         GetComponent<Movement>().enabled = false;
         audioSource.PlayOneShot(crashAudioClip);
+        crashParcticles.Play();
 
         Invoke("ReloadLevel", reLoadDelay);     //use invoke to delay the reload
     }
@@ -64,6 +76,7 @@ public class CollisionHandler : MonoBehaviour
         //This is to enable player controls when reach the end of the level
         GetComponent<Movement>().enabled = false;
         audioSource.PlayOneShot(SuccessAudioClip);
+        SuccessParcticles.Play();
         //GetComponent<AudioSource>().enabled = false;
         Invoke("LoadNextLevel", reLoadDelay);   //use invoke to delay the load
     }
@@ -79,8 +92,17 @@ public class CollisionHandler : MonoBehaviour
         SceneManager.LoadScene(nextSceneLevel);
     }
 
-    void UnableAudio()
+    void CheatCode()
     {
+        if (Input.GetKey(KeyCode.L))
+        {
+            LoadNextLevel();
 
+        }else if (Input.GetKey(KeyCode.C))
+        {
+            isCollosionOff  = !isCollosionOff;
+            //GetComponent<BoxCollider>().enabled = false;
+        }
     }
+
 }

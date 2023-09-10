@@ -8,6 +8,10 @@ public class Movement : MonoBehaviour
     [SerializeField] float rotateValue = 100f;
     [SerializeField] AudioClip audioClip;
 
+    [SerializeField] ParticleSystem boostParcticles;
+    [SerializeField] ParticleSystem boostLParcticles;
+    [SerializeField] ParticleSystem boostRParcticles;
+
     Rigidbody rb;
     AudioSource audioSource;
     // Start is called before the first frame update
@@ -38,11 +42,17 @@ public class Movement : MonoBehaviour
                 //play rocket boost audio
                 audioSource.PlayOneShot(audioClip);
             }
+
+            if (!boostParcticles.isPlaying)
+            {
+                boostParcticles.Play();
+            }
         }
         else
         {
             //stop rocket boost audio
             audioSource.Stop();
+            boostParcticles.Stop();
         }
     }
     //process for rotation of the rocket to left and rigth

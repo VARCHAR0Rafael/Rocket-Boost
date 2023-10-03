@@ -14,4 +14,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MovingObstalacle.unity
     guid: 70d7fb42a7089c340b0f1ac3997be240
+  - enabled: 1
+    path: Assets/Scenes/MovingObstalacle 2.unity
+    guid: 45c0b56a841f2ea4d9e7b025aa29ee83
+  - enabled: 1
+    path: Assets/Scenes/MovingObstalacle 3.unity
+    guid: 1e4ef926d1933ce438fce35b0b895847
+  - enabled: 1
+    path: Assets/Scenes/MovingObstalacle 4.unity
+    guid: 5b28fc7a717d11f4e99c35b429f8b64c
+  - enabled: 1
+    path: Assets/Scenes/Rotating Obstale.unity
+    guid: 552cde154280b0c4d889779b985bbc3c
+  - enabled: 1
+    path: Assets/Scenes/Float lands.unity
+    guid: 463af1a5cf38845459b0492e3d4fde4c
+  - enabled: 1
+    path: Assets/Scenes/Timing Level.unity
+    guid: 91ba93dc18bf586448dd0f91ef6b5659
   m_configObjects: {}

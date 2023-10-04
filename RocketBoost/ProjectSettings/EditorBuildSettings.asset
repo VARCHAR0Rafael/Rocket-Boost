@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Timing Level.unity
     guid: 91ba93dc18bf586448dd0f91ef6b5659
+  - enabled: 1
+    path: Assets/Scenes/Flappy Rocket.unity
+    guid: 8c4b182d7845d5d47a80180a533890cf
+  - enabled: 1
+    path: Assets/Scenes/Go up.unity
+    guid: 3ec2abaedd74c51479df30f98b450870
   m_configObjects: {}
